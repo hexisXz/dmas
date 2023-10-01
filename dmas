@@ -1,0 +1,30 @@
+#!/bin/sh
+
+
+# mount drive
+mdrive(){
+	lsblk | awk '{print $1}' && echo -n "Enter Drive: " && read inp && ls ~/stuff/drives && echo -n "Enter mount point: " && read inp2 && sudo mount /dev/$inp ~/stuff/drives/$inp2
+}
+
+
+
+# unmount drive
+umdrive(){
+	lsblk | awk '{print $1}' && echo -n "Enter Drive: " && read inp && ls ~/stuff/drives && echo -n "Enter umount point: " && read inp2 && sudo umount /dev/$inp ~/stuff/drives/$inp2
+}
+
+
+
+
+# ask if you want a drive mounted or unmounted & read user input
+echo -n "mount drive or unmount (m/u) " && read question
+
+
+# if your input = m call the mdrive function
+[ "$question" = "m" ] && mdrive
+
+# if your input = u call the umdrive function
+[ "$question" = "u" ] && umdrive
+
+# if your input = q quit the program with exit code 1
+[ "$question" = "q" ] && exit 1
