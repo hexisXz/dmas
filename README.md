@@ -8,6 +8,8 @@ before you install dmas run mkdir ~/drives(number of drives you want)
 
 make sure the drive dir is in your home dir.
 
+then chown (username) ~/drives
+
 # install 
 
 ``` sh
