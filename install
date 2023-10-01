@@ -1,4 +1,4 @@
 #/bin/sh
 
 
-sudo mv dmas /bin/ && mkdir ~/drives && mkdir ~/drives/drive1 drive2 drive3 drive4 drive5 drive6 drive7 drive8 drive9 && user=$(awk -F":" '/1000/ {print $1, $6}' /etc/passwd | awk '{print $1}') ; sudo chown $user ~/drives
+sudo mv dmas/dmas /bin/ && mkdir ~/drives && mkdir ~/drives/drive1 drive2 drive3 drive4 drive5 drive6 drive7 drive8 drive9 && user=$"(awk -F":" '/1000/ {print $1, $6}' /etc/passwd | awk '{print $1}')" ; sudo chown $user ~/drives
